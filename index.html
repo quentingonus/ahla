@@ -1,9 +1,47 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
-<head></head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Hla Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    .footer {
+        text-align: center;
+        position: fixed;
+        bottom: 3vh;
+        width: 100vw;
+        height: 6vh;
+    }
+</style>
 
 <body>
-    Ahla says: Blah Blah and fuck you Aung Kyaw Myo
+    <div id="root">
+        <p>Name : {{ ahlaData.name }}</p>
+        <p>Age : {{ ahlaData.age }}</p>
+        <p>Quote : {{ ahlaData.quote }}</p>
+        <div class="footer">
+            <hr>
+            <p v-html="ahlaData.copyright"></p>
+        </div>
+    </div>
 </body>
+<script>
+    var vueApp = new Vue({
+        el: "#root",
+        data: {
+            ahlaData: {
+                name: "A Hla",
+                age: 21,
+                quote: "Fuck you Aung Kyaw Myo",
+                selfie: "",
+                copyright: "Copyright &copy; 2020 All rights reserved to A Hla.",
+            },
+        },
+        methods: {},
+    });
+</script>
 
 </html>
